@@ -55,12 +55,12 @@
                 if($element["child"]){
                     //Si el elemento de menu tiene hijos entonces se crea el elemento con las clases de bootstrap, usando Dropdown para que se pueda mostrar los elementos hijos
                     $nav    .=  '<li class="nav-item dropdown">'."\n";
-                    $nav    .=   '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$element['title'].'</a>'."\n";
+                    $nav    .=   '<a class="nav-link dropdown-toggle" href="'.$element['url'].'" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$element['title'].'</a>'."\n";
 
                     $nav    .=  '<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">'."\n";
                     //Se recorre el array para obtener los elementos hijos del padre, y se crea el elemento para ser renderizado en el DOM.
                     foreach ($element["child"] as $child) {
-                        $nav    .=  '<a class="dropdown-item" href="#">'.$child['title'].'</a>'."\n";
+                        $nav    .=  '<a class="dropdown-item" href="'.$child['url'].'">'.$child['title'].'</a>'."\n";
                     }
                     $nav    .=  '</div>'."\n";
                     $nav    .=  '</li>'."\n";
@@ -68,7 +68,7 @@
                 }else{
                     //Si el elemento menu NO tiene hijos entonces se genera un unico menu usando las respectivas etiquetas de Bootstrap
                     $nav    .=  '<li class="nav-item">'."\n";
-                    $nav    .=  '<a class="nav-link" href="#">'.$element['title'].'</a>'."\n";
+                    $nav    .=  '<a class="nav-link" href="'.$element['url'].'">'.$element['title'].'</a>'."\n";
                     $nav    .=  '</li>'."\n";
                 }
             }

@@ -54,7 +54,7 @@
             foreach ($elements as $element) {
                 if($element["child"]){
                     //Si el elemento de menu tiene hijos entonces se crea el elemento con las clases de bootstrap, usando Dropdown para que se pueda mostrar los elementos hijos
-                    $nav    .=  '<li class="nav-item dropdown nav-item-border">'."\n";
+                    $nav    .=  '<li class="nav-item dropdown">'."\n";
                     $nav    .=   '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$element['title'].'</a>'."\n";
 
                     $nav    .=  '<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">'."\n";
@@ -67,7 +67,7 @@
                     //<!-- </li> -->
                 }else{
                     //Si el elemento menu NO tiene hijos entonces se genera un unico menu usando las respectivas etiquetas de Bootstrap
-                    $nav    .=  '<li class="nav-item nav-item-border">'."\n";
+                    $nav    .=  '<li class="nav-item">'."\n";
                     $nav    .=  '<a class="nav-link" href="#">'.$element['title'].'</a>'."\n";
                     $nav    .=  '</li>'."\n";
                 }
